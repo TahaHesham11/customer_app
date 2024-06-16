@@ -1,0 +1,3 @@
+class ConfirmInformationStates{}
+class ConfirmInformationInitialState extends ConfirmInformationStates{}
+class ConfirmInformationIsCheckState extends ConfirmInformationStates{}

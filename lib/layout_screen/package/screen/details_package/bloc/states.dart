@@ -1,0 +1,2 @@
+class DetailsPackageStates{}
+class DetailsPackageInitialState extends DetailsPackageStates{}
