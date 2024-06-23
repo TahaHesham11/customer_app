@@ -18,8 +18,8 @@ import 'bloc/cubit.dart';
 import 'bloc/states.dart';
 
 class LoginScreen extends StatelessWidget {
-final bool? isCustomer;
-  const LoginScreen({super.key,  this.isCustomer});
+late bool isCustomer ;
+   LoginScreen({super.key,  required this.isCustomer});
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +75,17 @@ final bool? isCustomer;
                        navigateAndFinish(context, VerificationScreen());
                      },
                        color: Mycolor,
-                       text: 'Forgot your password'.tr())),
+                       text: 'Forgot your password'.tr()
+                   )
+               ),
 
 
               MyButton(
                 margin: EdgeInsetsDirectional.only(top: 50.r,bottom: 30.r),
                 onPressed: (){
-                 navigateTo(context,isCustomer! ?  EmployeeLayoutScreen(employeeLayout: false,): LayoutScreen(isLayout: true,));
+
+
+              navigateTo(context,isCustomer ?  const EmployeeLayoutScreen(employeeLayout: false,): const LayoutScreen(isLayout: true,));
                 },
                 text:'Login'.tr(),
                 background: Mycolor,
@@ -94,7 +98,8 @@ final bool? isCustomer;
                   CustomTextButton(
                     fontSize: 15.sp,
                     onPressed: (){
-                      navigateAndFinish(context,isCustomer! ? const RegisterScreen(isShowRegister: true,):const RegisterScreen(isShowRegister: false,));
+                //      Navigator.pop(context);
+                    navigateAndFinish(context,isCustomer ? const RegisterScreen(isShowRegister: true,):const RegisterScreen(isShowRegister: false,));
                     },
                     text: 'Create an account'.tr(),
                   )

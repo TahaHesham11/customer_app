@@ -25,7 +25,7 @@ class LayoutCubit extends Cubit<LayoutStates>{
      SubscribeScreen(),
     const PackageScreen(),
      EmployeesScreen(),
-    const SettingsScreen(),
+     SettingsScreen(isCustomer: false,),
   ];
 
   void changeBottom(index,context){

@@ -1,3 +1,4 @@
+import 'package:customer_app/auth/register/screen/verification_phone/screen/account_create/view.dart';
 import 'package:customer_app/auth/verification/screen/%20number_verification/screen/Reset_password/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +15,8 @@ import 'bloc/cubit.dart';
 import 'bloc/states.dart';
 
 class VerificationPhone extends StatelessWidget {
-  const VerificationPhone({super.key});
+  bool isCustomer;
+   VerificationPhone({super.key,required this.isCustomer});
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +94,7 @@ class VerificationPhone extends StatelessWidget {
                     margin: EdgeInsetsDirectional.only(top: 50.r, bottom: 80.r),
                     onPressed: () {
 
-                      navigateTo(context, ResetScreen());
+                    isCustomer ?   navigateTo(context, ResetScreen()) : navigateTo(context, const AccountCreateScreen());
                     },
                     text: 'Verification'.tr(),
                     background: Mycolor,

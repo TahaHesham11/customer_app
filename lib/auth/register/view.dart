@@ -16,7 +16,7 @@ import 'screen/verification_phone/view.dart';
 
 class RegisterScreen extends StatelessWidget {
  final bool? isShowRegister;
-  const RegisterScreen({this.isShowRegister ,super.key});
+  const RegisterScreen({ this.isShowRegister ,super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -223,7 +223,7 @@ class RegisterScreen extends StatelessWidget {
                   MyButton(
                     margin: EdgeInsetsDirectional.only(bottom: 30.r),
                     onPressed: (){
-                      navigateTo(context, VerificationPhone());
+                      navigateTo(context,  VerificationPhone(isCustomer: isShowRegister!,));
 
                     },
                     text:'Login'.tr(),
@@ -237,9 +237,7 @@ class RegisterScreen extends StatelessWidget {
                       CustomTextButton(
                         fontSize: 15.sp,
                         onPressed: (){
-                          navigateTo(context, LoginScreen(
-                            isCustomer: isShowRegister,
-                          ));
+                          navigateTo(context, LoginScreen(isCustomer: isShowRegister!,));
                         },
                         text: 'Login'.tr(),
                       )

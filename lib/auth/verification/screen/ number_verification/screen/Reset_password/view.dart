@@ -54,7 +54,7 @@ final bool? isCustomer ;
                   MyButton(
                     margin: EdgeInsetsDirectional.only(top: 50.r,bottom: 80.r),
                     onPressed: (){
-                      navigateAndFinish(context, LoginScreen());
+                      navigateAndFinish(context,  LoginScreen(isCustomer: true,));
 
                     },
                     text:'save'.tr(),

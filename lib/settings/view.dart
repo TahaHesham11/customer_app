@@ -20,7 +20,8 @@ import 'about_us/view.dart';
 import 'bloc/cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+  final bool isCustomer;
+   SettingsScreen({super.key,required this.isCustomer});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +81,7 @@ class SettingsScreen extends StatelessWidget {
 
               width: 205.w,
               onPressed: (){
-          navigateAndFinish(context, RegisterScreen(isShowRegister: true,));
+          navigateAndFinish(context, isCustomer ? const RegisterScreen(isShowRegister: true,): RegisterScreen(isShowRegister: false,));
               },
             text: 'sign out'.tr(),
             image:const Icon(Icons.logout,color: Colors.white,),

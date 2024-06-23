@@ -1,12 +1,15 @@
+import 'package:customer_app/auth/login/view.dart';
 import 'package:customer_app/custom/custom_title_text.dart';
+import 'package:customer_app/layout_screen/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class AccountCreateScreen extends StatefulWidget {
-  final bool? isCustomer;
+import '../../../../../../core/view.dart';
 
-   AccountCreateScreen({super.key,this.isCustomer});
+class AccountCreateScreen extends StatefulWidget {
+
+   const AccountCreateScreen({super.key,});
 
   @override
   State<AccountCreateScreen> createState() => _AccountCreateScreenState();
@@ -15,7 +18,11 @@ class AccountCreateScreen extends StatefulWidget {
 class _AccountCreateScreenState extends State<AccountCreateScreen> {
 
 
-  bool isNotificationAllowed = false;
+  @override
+  void initState() {
+    super.initState();
+    startDelayedAction();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,5 +52,10 @@ class _AccountCreateScreenState extends State<AccountCreateScreen> {
   }
 
 
+  void startDelayedAction() {
+    Future.delayed(const Duration(seconds: 5), () {
+      navigateAndFinish(context, const LayoutScreen(isLayout: true));
+    });
+  }
 
 }

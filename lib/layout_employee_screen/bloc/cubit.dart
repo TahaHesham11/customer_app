@@ -19,7 +19,7 @@ class EmployeeLayoutCubit extends Cubit<EmployeeLayoutStates>{
   [
     const EmployeeHomeScreen(),
     const EmployeeVisitScreen(),
-    const SettingsScreen(),
+     SettingsScreen(isCustomer: true,),
   ];
 
   void changeBottom(index,context){
